@@ -71,5 +71,6 @@ new_data <- data %>%
   melt(id = id_labels, measure.vars = data_labels) %>%
   dcast(ID + Activity ~ variable, mean)
 
-# Write it as a csv
-write.csv(file="new_data.csv", new_data)
+# Write out the new table
+#write.csv(file="new_data.csv", new_data)
+write.table(new_data, file = "data_subset.txt", row.names = FALSE)
